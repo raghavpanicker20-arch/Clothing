@@ -1,0 +1,638 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>REX CLOTHING — Commercial Street</title>
+<meta name="description" content="REX CLOTHING — Gen Z streetwear near Commercial Street. Acid wash, Y2K, crochet, gothic accessories. Order on WhatsApp.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0a0a0a;
+  --panel:#141414;
+  --panel-2:#1c1c1c;
+  --bone:#f3f1ea;
+  --bone-dim:#bdbab0;
+  --acid:#d4ff3f;
+  --line:#2c2c2c;
+  --crimson:#ff3b3b;
+  --radius:2px;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--black);
+  color:var(--bone);
+  font-family:'Space Grotesk',sans-serif;
+  font-size:16px;
+  line-height:1.5;
+  overflow-x:hidden;
+}
+body{
+  background-image:
+    radial-gradient(circle at 15% 10%, rgba(212,255,63,0.04), transparent 40%),
+    radial-gradient(circle at 85% 80%, rgba(255,59,59,0.04), transparent 45%);
+}
+h1,h2,h3,.disp{
+  font-family:'Archivo Black',sans-serif;
+  text-transform:uppercase;
+  letter-spacing:-0.01em;
+  line-height:0.95;
+}
+.mono{font-family:'JetBrains Mono',monospace;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+.wrap{max-width:1180px;margin:0 auto;padding:0 24px;}
+.eyebrow{
+  font-family:'JetBrains Mono',monospace;
+  font-size:12px;
+  letter-spacing:0.18em;
+  text-transform:uppercase;
+  color:var(--acid);
+  display:flex;align-items:center;gap:10px;
+  margin-bottom:14px;
+}
+.eyebrow::before{content:'';width:18px;height:1px;background:var(--acid);}
+section{position:relative;padding:90px 0;border-bottom:1px solid var(--line);}
+::selection{background:var(--acid);color:#000;}
+
+/* ---------- TOP BAR ---------- */
+.topbar{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  background:rgba(10,10,10,0.85);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:68px;}
+.logo{font-family:'Archivo Black',sans-serif;font-size:22px;letter-spacing:-0.02em;}
+.logo span{color:var(--acid);}
+.nav-links{display:flex;gap:28px;font-size:13px;text-transform:uppercase;letter-spacing:0.08em;}
+.nav-links a{opacity:0.75;transition:opacity .2s, color .2s;}
+.nav-links a:hover{opacity:1;color:var(--acid);}
+.top-cta{
+  display:flex;align-items:center;gap:8px;
+  background:var(--acid);color:#0a0a0a;
+  padding:9px 16px;font-size:13px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.04em;
+  border-radius:var(--radius);
+}
+.top-cta:hover{background:#e3ff6e;}
+.burger{display:none;background:none;border:1px solid var(--line);color:var(--bone);width:40px;height:40px;font-size:18px;cursor:pointer;}
+
+/* ---------- HERO ---------- */
+.hero{
+  min-height:100svh;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  padding-top:140px;
+  border-bottom:1px solid var(--line);
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:grayscale(1) contrast(1.15) brightness(0.55);
+  z-index:0;
+}
+.hero::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:
+    linear-gradient(180deg, rgba(10,10,10,0.35) 0%, rgba(10,10,10,0.9) 78%, var(--black) 100%),
+    repeating-linear-gradient(115deg, rgba(255,255,255,0.025) 0 2px, transparent 2px 60px);
+}
+.hero::after{
+  content:'';position:absolute;inset:0;z-index:1;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+  background-size:46px 46px;
+  mask-image:radial-gradient(ellipse at 50% 30%, black 0%, transparent 70%);
+  pointer-events:none;
+}
+.hero-grain{position:absolute;inset:0;opacity:0.5;pointer-events:none;mix-blend-mode:overlay;z-index:1;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.35'/%3E%3C/svg%3E");
+}
+.hero-inner{position:relative;z-index:2;padding-bottom:70px;}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:10px;
+  border:1px solid var(--line);padding:6px 14px;border-radius:30px;
+  font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.1em;
+  color:var(--bone-dim);margin-bottom:26px;text-transform:uppercase;
+}
+.hero-tag .dot{width:6px;height:6px;border-radius:50%;background:var(--acid);box-shadow:0 0 8px var(--acid);}
+.hero h1{
+  font-size:clamp(48px,9vw,118px);
+  color:var(--bone);
+}
+.hero h1 .outline{
+  color:transparent;
+  -webkit-text-stroke:1.5px var(--bone-dim);
+}
+.hero h1 .accent{color:var(--acid);}
+.hero-sub{
+  max-width:520px;margin-top:26px;
+  color:var(--bone-dim);font-size:17px;
+}
+.hero-meta{
+  margin-top:44px;display:flex;flex-wrap:wrap;gap:14px;align-items:center;
+}
+.btn{
+  display:inline-flex;align-items:center;gap:10px;
+  padding:16px 28px;font-size:14px;font-weight:700;
+  text-transform:uppercase;letter-spacing:0.05em;
+  border-radius:var(--radius);cursor:pointer;border:1px solid transparent;
+  transition:transform .15s ease, background .2s;
+}
+.btn:active{transform:scale(0.97);}
+.btn-acid{background:var(--acid);color:#0a0a0a;}
+.btn-acid:hover{background:#e3ff6e;}
+.btn-outline{border-color:var(--line);color:var(--bone);background:transparent;}
+.btn-outline:hover{border-color:var(--bone-dim);}
+.price-strip{
+  border-top:1px solid var(--line);
+  display:flex;align-items:center;gap:18px;
+  padding-top:18px;margin-top:38px;
+  font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--bone-dim);
+  flex-wrap:wrap;
+}
+.price-strip b{color:var(--acid);font-weight:600;}
+
+/* ---------- MARQUEE ---------- */
+.marquee{
+  background:var(--acid);color:#0a0a0a;
+  overflow:hidden;white-space:nowrap;border-bottom:1px solid var(--line);
+}
+.marquee-track{display:inline-flex;animation:scroll 26s linear infinite;}
+.marquee span{
+  font-family:'Archivo Black',sans-serif;text-transform:uppercase;
+  font-size:16px;padding:14px 30px;display:inline-flex;align-items:center;gap:30px;
+}
+@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+
+/* ---------- SECTION HEADERS ---------- */
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;margin-bottom:50px;gap:24px;flex-wrap:wrap;}
+.sec-head h2{font-size:clamp(32px,5vw,56px);}
+.sec-head p{max-width:340px;color:var(--bone-dim);font-size:14px;padding-bottom:6px;}
+
+/* ---------- COLLECTION GRID ---------- */
+.collection-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
+  background:var(--line);border:1px solid var(--line);
+}
+.col-card{
+  background:var(--panel);padding:30px 24px;min-height:300px;
+  display:flex;flex-direction:column;justify-content:flex-end;
+  position:relative;transition:background .25s;overflow:hidden;
+}
+.col-card img{
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+  filter:grayscale(1) contrast(1.1) brightness(0.5);
+  transition:transform .5s ease, filter .4s ease;
+  z-index:0;
+}
+.col-card:hover img{transform:scale(1.06);filter:grayscale(0.4) contrast(1.1) brightness(0.55);}
+.col-card::before{
+  content:'';position:absolute;inset:0;z-index:1;
+  background:linear-gradient(180deg, rgba(10,10,10,0.15) 0%, rgba(10,10,10,0.92) 80%);
+}
+.col-card .num,.col-card h3,.col-card p,.col-card .tagrow{position:relative;z-index:2;}
+.col-card .num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--bone-dim);position:absolute;top:24px;left:24px;}
+.col-card h3{font-size:21px;margin-bottom:10px;}
+.col-card p{font-size:13px;color:var(--bone-dim);margin-bottom:14px;}
+.tagrow{display:flex;flex-wrap:wrap;gap:6px;}
+.tag{
+  font-family:'JetBrains Mono',monospace;font-size:11px;
+  border:1px solid var(--line);padding:4px 9px;border-radius:20px;color:var(--bone-dim);
+  text-transform:uppercase;
+}
+.col-card.feat{grid-column:span 2;border:1px solid var(--acid);}
+.col-card.feat h3{font-size:30px;}
+.col-card .glow{position:absolute;top:0;right:0;width:140px;height:140px;background:radial-gradient(circle,rgba(212,255,63,0.12),transparent 70%);pointer-events:none;z-index:1;}
+
+/* ---------- OFFERS ---------- */
+.offers{background:var(--panel);}
+.offers-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.offer-card{
+  border:1px dashed var(--line);padding:28px 22px;position:relative;background:var(--black);
+}
+.offer-card::before{
+  content:'';position:absolute;top:-1px;right:18px;width:1px;height:14px;background:var(--black);
+}
+.offer-pct{
+  font-family:'Archivo Black',sans-serif;font-size:46px;color:var(--acid);line-height:1;
+}
+.offer-card h4{font-size:17px;margin:12px 0 8px;text-transform:uppercase;}
+.offer-card p{font-size:13px;color:var(--bone-dim);}
+.offer-stamp{
+  position:absolute;top:20px;right:20px;
+  border:1px solid var(--crimson);color:var(--crimson);
+  font-family:'JetBrains Mono',monospace;font-size:10px;
+  padding:3px 8px;border-radius:20px;text-transform:uppercase;letter-spacing:0.08em;
+  transform:rotate(6deg);
+}
+
+/* ---------- PRICE TABLE ---------- */
+.price-table{border:1px solid var(--line);}
+.price-row{
+  display:grid;grid-template-columns:1fr auto auto;gap:16px;align-items:center;
+  padding:20px 24px;border-bottom:1px solid var(--line);
+}
+.price-row:last-child{border-bottom:none;}
+.price-row .pname{font-size:16px;font-weight:600;}
+.price-row .pcat{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bone-dim);text-transform:uppercase;}
+.price-row .pval{font-family:'JetBrains Mono',monospace;color:var(--acid);font-size:15px;white-space:nowrap;}
+
+/* ---------- REVIEWS ---------- */
+.reviews-track{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.review-card{
+  background:var(--panel);border:1px solid var(--line);padding:26px;
+  display:flex;flex-direction:column;gap:16px;
+}
+.stars{color:var(--acid);font-size:14px;letter-spacing:2px;}
+.review-card p{font-size:14.5px;color:var(--bone-dim);}
+.review-who{display:flex;align-items:center;gap:12px;margin-top:auto;}
+.av{
+  width:36px;height:36px;border-radius:50%;
+  background:var(--acid);color:#0a0a0a;font-family:'Archivo Black',sans-serif;
+  display:flex;align-items:center;justify-content:center;font-size:14px;
+}
+.review-who .name{font-size:13px;font-weight:600;}
+.review-who .meta{font-size:11px;color:var(--bone-dim);font-family:'JetBrains Mono',monospace;}
+
+/* ---------- LOCATION ---------- */
+.loc-grid{display:grid;grid-template-columns:1fr 1fr;gap:0;border:1px solid var(--line);}
+.loc-photo{position:relative;min-height:260px;overflow:hidden;border-bottom:1px solid var(--line);}
+.loc-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) contrast(1.1) brightness(0.6);position:absolute;inset:0;}
+.loc-photo .cap{position:absolute;bottom:14px;left:18px;z-index:2;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.08em;color:var(--bone);background:rgba(10,10,10,0.55);padding:6px 10px;border:1px solid var(--line);}
+.loc-info{padding:44px;background:var(--panel);}
+.loc-info .line-item{display:flex;gap:14px;margin-bottom:24px;align-items:flex-start;}
+.loc-info .ic{width:34px;height:34px;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:15px;}
+.loc-info h4{font-size:13px;text-transform:uppercase;letter-spacing:0.06em;color:var(--bone-dim);margin-bottom:4px;font-family:'JetBrains Mono',monospace;}
+.loc-info .val{font-size:16px;}
+.map-embed{min-height:380px;filter:grayscale(1) invert(0.92) contrast(0.9);}
+.map-embed iframe{width:100%;height:100%;border:0;min-height:380px;}
+
+/* ---------- CONTACT ---------- */
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;}
+.contact-copy h2{font-size:clamp(32px,5vw,52px);margin-bottom:18px;}
+.contact-copy p{color:var(--bone-dim);max-width:380px;margin-bottom:30px;}
+.contact-quick{display:flex;flex-direction:column;gap:14px;}
+.cq-item{display:flex;align-items:center;gap:14px;padding:14px 16px;border:1px solid var(--line);}
+.cq-item .ic{font-size:18px;}
+.cq-item a{font-size:15px;font-weight:600;}
+.cq-item span{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--bone-dim);text-transform:uppercase;}
+
+form{display:flex;flex-direction:column;gap:16px;}
+.field label{display:block;font-family:'JetBrains Mono',monospace;font-size:11px;text-transform:uppercase;letter-spacing:0.06em;color:var(--bone-dim);margin-bottom:8px;}
+.field input,.field textarea,.field select{
+  width:100%;background:var(--panel);border:1px solid var(--line);color:var(--bone);
+  padding:13px 14px;font-family:'Space Grotesk',sans-serif;font-size:14px;border-radius:var(--radius);
+  outline:none;transition:border-color .2s;
+}
+.field input:focus,.field textarea:focus,.field select:focus{border-color:var(--acid);}
+.field textarea{resize:vertical;min-height:100px;}
+.row2{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.submit-btn{margin-top:6px;}
+.form-note{font-size:12px;color:var(--bone-dim);font-family:'JetBrains Mono',monospace;}
+
+/* ---------- FOOTER ---------- */
+footer{padding:48px 0 30px;}
+.foot-grid{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:18px;}
+.foot-logo{font-family:'Archivo Black',sans-serif;font-size:20px;}
+.foot-logo span{color:var(--acid);}
+.foot-links{display:flex;gap:22px;font-size:13px;color:var(--bone-dim);flex-wrap:wrap;}
+.foot-links a:hover{color:var(--acid);}
+.foot-bottom{margin-top:30px;padding-top:20px;border-top:1px solid var(--line);font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--bone-dim);display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+
+/* ---------- WHATSAPP FLOAT ---------- */
+.wa-float{
+  position:fixed;bottom:24px;right:24px;z-index:200;
+  background:var(--acid);color:#0a0a0a;
+  width:60px;height:60px;border-radius:50%;
+  display:flex;align-items:center;justify-content:center;
+  font-size:28px;box-shadow:0 6px 24px rgba(0,0,0,0.5);
+  animation:pulse 2.4s ease-in-out infinite;
+}
+@keyframes pulse{0%,100%{box-shadow:0 6px 24px rgba(212,255,63,0.25);}50%{box-shadow:0 6px 30px rgba(212,255,63,0.55);}}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width:980px){
+  .nav-links{display:none;}
+  .burger{display:flex;align-items:center;justify-content:center;}
+  .collection-grid{grid-template-columns:repeat(2,1fr);}
+  .col-card.feat{grid-column:span 2;}
+  .offers-grid{grid-template-columns:1fr 1fr;}
+  .reviews-track{grid-template-columns:1fr;}
+  .loc-grid{grid-template-columns:1fr;}
+  .contact-grid{grid-template-columns:1fr;gap:40px;}
+}
+@media (max-width:620px){
+  section{padding:60px 0;}
+  .collection-grid{grid-template-columns:1fr;}
+  .col-card.feat{grid-column:span 1;}
+  .offers-grid{grid-template-columns:1fr;}
+  .row2{grid-template-columns:1fr;}
+  .price-strip{flex-direction:column;align-items:flex-start;gap:6px;}
+  .hero-meta{flex-direction:column;align-items:stretch;}
+  .btn{justify-content:center;}
+  .foot-grid{flex-direction:column;align-items:flex-start;}
+}
+.fade-in{opacity:0;transform:translateY(18px);transition:opacity .6s ease, transform .6s ease;}
+.fade-in.show{opacity:1;transform:translateY(0);}
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important;}
+  .fade-in{opacity:1;transform:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="topbar">
+  <div class="wrap">
+    <a href="#top" class="logo">REX<span>.</span>CLOTHING</a>
+    <nav class="nav-links">
+      <a href="#collection">Collection</a>
+      <a href="#offers">Offers</a>
+      <a href="#prices">Prices</a>
+      <a href="#reviews">Reviews</a>
+      <a href="#location">Location</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="top-cta" href="https://wa.me/919980440845?text=Hi%20REX%20Clothing!%20I%20want%20to%20order." target="_blank" rel="noopener">WhatsApp Order</a>
+    <button class="burger" aria-label="Menu" onclick="document.getElementById('mnav').classList.toggle('open')">☰</button>
+  </div>
+  <div id="mnav" style="display:none;flex-direction:column;border-top:1px solid var(--line);background:#0a0a0a;">
+    <style>#mnav.open{display:flex !important;}#mnav a{padding:14px 24px;border-bottom:1px solid var(--line);font-size:14px;text-transform:uppercase;letter-spacing:0.06em;}</style>
+    <a href="#collection">Collection</a>
+    <a href="#offers">Offers</a>
+    <a href="#prices">Prices</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#location">Location</a>
+    <a href="#contact">Contact</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <img class="hero-bg" src="https://picsum.photos/seed/rexdenim/1800/1200" alt="Streetwear denim fashion backdrop">
+  <div class="hero-grain"></div>
+  <div class="wrap hero-inner">
+    <div class="hero-tag"><span class="dot"></span> 2 MIN WALK FROM COMMERCIAL STREET</div>
+    <h1>RAW DENIM.<br><span class="outline">RAW</span> <span class="accent">ATTITUDE.</span></h1>
+    <p class="hero-sub">Acid-washed jeans, Y2K fits, crochet tops and gothic accessories — REX Clothing is where Bengaluru's streetwear crowd comes to dress like they mean it. Built for students, families, and the city's strays we feed out back.</p>
+    <div class="hero-meta">
+      <a class="btn btn-acid" href="https://wa.me/919980440845?text=Hi%20REX%20Clothing!%20I%20want%20to%20order." target="_blank" rel="noopener">💬 Order on WhatsApp</a>
+      <a class="btn btn-outline" href="tel:+919980440845">📞 Call 99804 40845</a>
+    </div>
+    <div class="price-strip">
+      <span>PRICE RANGE — <b>₹799</b> to <b>₹2,999</b></span>
+      <span>•</span>
+      <span>OPEN DAILY 11AM – 9PM</span>
+      <span>•</span>
+      <span>WALK-INS WELCOME</span>
+    </div>
+  </div>
+</header>
+
+<!-- MARQUEE -->
+<div class="marquee">
+  <div class="marquee-track">
+    <span>★ NEW DROP — Y2K SUNDAY ★ ACID WASH IS BACK ★ GOTHIC ACCESSORIES IN STOCK ★ NEW DROP — Y2K SUNDAY ★ ACID WASH IS BACK ★ GOTHIC ACCESSORIES IN STOCK ★</span>
+    <span>★ NEW DROP — Y2K SUNDAY ★ ACID WASH IS BACK ★ GOTHIC ACCESSORIES IN STOCK ★ NEW DROP — Y2K SUNDAY ★ ACID WASH IS BACK ★ GOTHIC ACCESSORIES IN STOCK ★</span>
+  </div>
+</div>
+
+<!-- COLLECTION -->
+<section id="collection">
+  <div class="wrap">
+    <div class="sec-head fade-in">
+      <h2>The Gen&nbsp;Z<br>Collection</h2>
+      <p>Five lines, one wardrobe. Built for Commercial Street weekends and lecture-hall Mondays alike.</p>
+    </div>
+    <div class="collection-grid fade-in">
+      <div class="col-card feat">
+        <img src="https://picsum.photos/seed/acidwash1/900/700" alt="Acid wash denim jacket and jeans">
+        <div class="glow"></div>
+        <span class="num">01</span>
+        <h3>Acid Wash Denim</h3>
+        <p>Jeans, jackets and oversized fits — stonewashed, distressed, one-of-a-kind every single piece.</p>
+        <div class="tagrow"><span class="tag">Jeans</span><span class="tag">Jackets</span><span class="tag">Unisex</span></div>
+      </div>
+      <div class="col-card">
+        <img src="https://picsum.photos/seed/crochet2/700/700" alt="Crochet top fashion">
+        <span class="num">02</span>
+        <h3>Crochet Tops</h3>
+        <p>Handknit halters and crop layers for women, made to be seen at golden hour.</p>
+        <div class="tagrow"><span class="tag">Women</span><span class="tag">Summer</span></div>
+      </div>
+      <div class="col-card">
+        <img src="https://picsum.photos/seed/y2kfits3/700/700" alt="Y2K streetwear fit">
+        <span class="num">03</span>
+        <h3>Y2K Fits</h3>
+        <p>Low-rise, cargo, butterfly prints — the early-2000s, remastered for 2026.</p>
+        <div class="tagrow"><span class="tag">Men</span><span class="tag">Women</span></div>
+      </div>
+      <div class="col-card">
+        <img src="https://picsum.photos/seed/gothicacc4/700/700" alt="Gothic accessories, chains and chokers">
+        <span class="num">04</span>
+        <h3>Gothic Accessories</h3>
+        <p>Chain belts, chokers, studded caps and rings to finish the fit with an edge.</p>
+        <div class="tagrow"><span class="tag">Unisex</span><span class="tag">Accessories</span></div>
+      </div>
+      <div class="col-card">
+        <img src="https://picsum.photos/seed/menstreet5/700/700" alt="Men's streetwear highlights">
+        <span class="num">05</span>
+        <h3>Men's Highlights</h3>
+        <p>Boxy tees, baggy denim and varsity layers — built loose, worn confident.</p>
+        <div class="tagrow"><span class="tag">Men</span><span class="tag">Streetwear</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OFFERS -->
+<section id="offers" class="offers">
+  <div class="wrap">
+    <div class="sec-head fade-in">
+      <h2>Weekly<br>Offers</h2>
+      <p>Refreshed every Monday. Drop a WhatsApp message to lock in the current deal.</p>
+    </div>
+    <div class="offers-grid fade-in">
+      <div class="offer-card">
+        <div class="offer-stamp">This week</div>
+        <div class="offer-pct">25%</div>
+        <h4>Off Acid Wash Jackets</h4>
+        <p>On all acid-washed denim jackets, men's and women's sizes.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-pct">B2G1</div>
+        <h4>Crochet Top Combo</h4>
+        <p>Buy any two crochet tops, get a third free — mix and match colors.</p>
+      </div>
+      <div class="offer-card">
+        <div class="offer-pct">₹199</div>
+        <h4>Flat-Rate Accessories</h4>
+        <p>Every gothic accessory — chokers, chains, rings — at one flat price.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRICES -->
+<section id="prices">
+  <div class="wrap">
+    <div class="sec-head fade-in">
+      <h2>Price<br>Range</h2>
+      <p>Honest pricing, no surprises at checkout. Everything between ₹799 and ₹2,999.</p>
+    </div>
+    <div class="price-table fade-in">
+      <div class="price-row"><div><div class="pname">Gothic Accessories</div><div class="pcat">Chokers · Chains · Rings</div></div><div></div><div class="pval">₹799 – ₹1,299</div></div>
+      <div class="price-row"><div><div class="pname">Crochet Tops</div><div class="pcat">Women</div></div><div></div><div class="pval">₹999 – ₹1,799</div></div>
+      <div class="price-row"><div><div class="pname">Y2K Fits</div><div class="pcat">Men &amp; Women</div></div><div></div><div class="pval">₹1,199 – ₹2,299</div></div>
+      <div class="price-row"><div><div class="pname">Acid Wash Jeans</div><div class="pcat">Unisex</div></div><div></div><div class="pval">₹1,499 – ₹2,499</div></div>
+      <div class="price-row"><div><div class="pname">Acid Wash Jackets</div><div class="pcat">Unisex</div></div><div></div><div class="pval">₹1,999 – ₹2,999</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section id="reviews">
+  <div class="wrap">
+    <div class="sec-head fade-in">
+      <h2>What People<br>Are Saying</h2>
+      <p>Students, parents and regulars from around Commercial Street.</p>
+    </div>
+    <div class="reviews-track fade-in">
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>Found an acid wash jacket here I haven't seen anywhere else on the street. Staff let me try on five jackets without rushing me once.</p>
+        <div class="review-who"><div class="av">A</div><div><div class="name">Aditi R.</div><div class="meta">College student, Bengaluru</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★★</div>
+        <p>Took my kids shopping for college and ended up buying myself a crochet top. Prices are fair and the fitting room queue moves fast.</p>
+        <div class="review-who"><div class="av">M</div><div><div class="name">Manjula S.</div><div class="meta">Parent &amp; regular customer</div></div></div>
+      </div>
+      <div class="review-card">
+        <div class="stars">★★★★☆</div>
+        <p>Gothic accessories section is underrated — got a chain belt and a choker for under a thousand rupees. Will be back for the jeans.</p>
+        <div class="review-who"><div class="av">K</div><div><div class="name">Karthik V.</div><div class="meta">Local resident</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section id="location">
+  <div class="wrap">
+    <div class="sec-head fade-in">
+      <h2>Find Us</h2>
+      <p>A short walk off Commercial Street — easy to spot, easier to shop.</p>
+    </div>
+    <div class="loc-photo fade-in">
+      <img src="https://picsum.photos/seed/commercialstreet/1600/500" alt="Commercial Street shopping district">
+      <span class="cap">Commercial Street, Bengaluru</span>
+    </div>
+    <div class="loc-grid fade-in">
+      <div class="loc-info">
+        <div class="line-item">
+          <div class="ic">📍</div>
+          <div><h4>Address</h4><div class="val">REX Clothing, near Commercial Street, Shivaji Nagar, Bengaluru, Karnataka</div></div>
+        </div>
+        <div class="line-item">
+          <div class="ic">🕒</div>
+          <div><h4>Hours</h4><div class="val">Mon – Sun, 11:00 AM – 9:00 PM</div></div>
+        </div>
+        <div class="line-item">
+          <div class="ic">📞</div>
+          <div><h4>Phone</h4><div class="val"><a href="tel:+919980440845">99804 40845</a></div></div>
+        </div>
+        <div class="line-item">
+          <div class="ic">💬</div>
+          <div><h4>WhatsApp Orders</h4><div class="val"><a href="https://wa.me/919980440845" target="_blank" rel="noopener">Chat with us instantly</a></div></div>
+        </div>
+      </div>
+      <div class="map-embed">
+        <iframe src="https://maps.google.com/maps?q=Commercial%20Street%2C%20Bengaluru&t=&z=15&ie=UTF8&iwloc=&output=embed" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="REX Clothing location map"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-copy fade-in">
+      <h2>Get In<br>Touch</h2>
+      <p>Questions about sizing, stock or an offer? Message us directly or fill the form and we'll reply the same day.</p>
+      <div class="contact-quick">
+        <div class="cq-item"><div class="ic">💬</div><div><span>WhatsApp</span><a href="https://wa.me/919980440845" target="_blank" rel="noopener">+91 99804 40845</a></div></div>
+        <div class="cq-item"><div class="ic">📞</div><div><span>Call</span><a href="tel:+919980440845">+91 99804 40845</a></div></div>
+        <div class="cq-item"><div class="ic">📍</div><div><span>Visit</span><span style="font-family:'Space Grotesk';font-weight:600;font-size:15px;color:var(--bone);">Near Commercial Street, Bengaluru</span></div></div>
+      </div>
+    </div>
+    <form class="fade-in" onsubmit="handleSubmit(event)">
+      <div class="row2">
+        <div class="field"><label for="fname">Name</label><input id="fname" type="text" placeholder="Your name" required></div>
+        <div class="field"><label for="fphone">Phone</label><input id="fphone" type="tel" placeholder="10-digit number" required pattern="[0-9]{10}"></div>
+      </div>
+      <div class="field"><label for="finterest">Interested in</label>
+        <select id="finterest">
+          <option>Acid Wash Denim</option>
+          <option>Crochet Tops</option>
+          <option>Y2K Fits</option>
+          <option>Gothic Accessories</option>
+          <option>Weekly Offer</option>
+          <option>Something else</option>
+        </select>
+      </div>
+      <div class="field"><label for="fmsg">Message</label><textarea id="fmsg" placeholder="Tell us what you're looking for..."></textarea></div>
+      <button class="btn btn-acid submit-btn" type="submit">Send Message</button>
+      <div class="form-note">Submitting opens WhatsApp with your details pre-filled — nothing is stored on this page.</div>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-logo">REX<span>.</span>CLOTHING</div>
+      <div class="foot-links">
+        <a href="#collection">Collection</a>
+        <a href="#offers">Offers</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#location">Location</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 REX Clothing — Near Commercial Street, Bengaluru</span>
+      <span>Designed for the streets, not the stockroom.</span>
+    </div>
+  </div>
+</footer>
+
+<a class="wa-float" href="https://wa.me/919980440845?text=Hi%20REX%20Clothing!%20I%20want%20to%20order." target="_blank" rel="noopener" aria-label="Order on WhatsApp">💬</a>
+
+<script>
+function handleSubmit(e){
+  e.preventDefault();
+  const name = document.getElementById('fname').value;
+  const phone = document.getElementById('fphone').value;
+  const interest = document.getElementById('finterest').value;
+  const msg = document.getElementById('fmsg').value;
+  const text = `Hi REX Clothing! My name is ${name} (${phone}). I'm interested in: ${interest}. ${msg ? 'Message: ' + msg : ''}`;
+  window.open('https://wa.me/919980440845?text=' + encodeURIComponent(text), '_blank');
+}
+
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){entry.target.classList.add('show');}
+  });
+},{threshold:0.12});
+document.querySelectorAll('.fade-in').forEach(el=>observer.observe(el));
+</script>
+</body>
+</html>
